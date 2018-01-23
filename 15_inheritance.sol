@@ -33,3 +33,11 @@ contract sample4 is sample1, sample2 {
     b();
   }
 }
+
+// Si un constructor toma un argumento, debe proporcionarse en el
+// constructor del contrato hijo.
+// En Solidity, el constructor hijo no llama al constructor padre en su lugar
+// el padre se inicializa y se copia al hijo
+contract sample5 is sample3(122) {
+
+}
