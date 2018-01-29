@@ -39,3 +39,11 @@ app.get("/getInfo", function(req, res){
   var details = proof.get.call(fileHash);
   res.send(details);
 })
+
+proof.logFileAddedStatus().watch(function(error, result){
+  if(!error){
+    if(result.args.status == true){
+      io.send(result);
+    }
+  }
+})
